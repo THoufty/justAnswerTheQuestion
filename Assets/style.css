@@ -1,0 +1,21 @@
+.welcome {
+    display: block;
+    margin-left: 33em;
+    margin-right: 33em;
+    margin-top: 10em;
+    width: 450px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.Q1 {
+    display: block;
+    margin-left: 33em;
+    margin-right: 33em;
+    margin-top: 10em;
+    width: 450px;
+    text-align: center;
+}
+.hidden {
+    display: none;
+}

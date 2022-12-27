@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/style.css">
+    <title>Just Answer The Question</title>
+</head>
+
+<header>
+    <p>View Highscores</p>
+    <p class="timer"></p>
+</header>
+
+<body>
+
+    <div class="welcome hidden">
+        <h1 class="title">Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers
+            will penalize your score/time by 10 seconds!</p>
+        <input class="startQuiz" type="submit" value="Start Quiz"></br>
+    </div>
+
+    <div class="Q1 visible">
+        <h1>Commonly used data types DO NOT include:</h1>
+        <input type="submit" value="1. strings"></br>
+        <input type="submit" value="2. booleans"></br>
+        <input type="submit" value="3. alerts"></br>
+        <input type="submit" value="4. numbers"></br>
+    </div>
+
+    <div class="Q2 hidden">
+        <h1 class="title">The condition in an if / else statement is enclosed within ______.</h1>
+        <input type="submit" value="1. quotes"></br>
+        <input type="submit" value="2. curly brackets"></br>
+        <input type="submit" value="3. parenthesis"></br>
+        <input type="submit" value="4. square brackets"></br>
+    </div>
+
+    <div class="Q3 hidden">
+        <h1 class="title">Arrays in JavaScript can be use to store ____.</h1>
+        <input type="submit" value="1. numbers and strings"></br>
+        <input type="submit" value="2. other arrays"></br>
+        <input type="submit" value="3. booleans"></br>
+        <input type="submit" value="4. all of the above"></br>
+    </div>
+
+    <div class="Q4 hidden">
+        <h1 class="title">String values must be enclosed within _____ when being assigned to variables.</h1>
+        <input type="submit" value="1. commas"></br>
+        <input type="submit" value="2. curly brackets"></br>
+        <input type="submit" value="3. quotes"></br>
+        <input type="submit" value="4. parenthesis"></br>
+    </div>
+
+    <div class="Q5 hidden">
+        <h1 class="title">A very useful tool in development and debugging for printing content to the debugger is:</h1>
+        <input type="submit" value="1. Javascript"></br>
+        <input type="submit" value="2. terminal/bash"></br>
+        <input type="submit" value="3. for loops"></br>
+        <input type="submit" value="4. console log"></br>
+    </div>
+
+    <div class="Done hidden">
+        <h1 class="title">All done!</h1>
+        <p>your score is </p>
+        <label for="initials">Enter initials: </label>
+        <input type="text" id="initials"><br>
+        <input type="submit" value="Submit">
+    </div>
+
+    <div class="scoreCard hidden">
+        <h1 class="title">High Scores</h1>
+        <input type="submit" value="Go Back"></br>
+        <input type="submit" value="Clear High Scores"></br>
+    </div>
+
+    <div class="correct/incorrect"></div>
+
+    <script src="./Assets/JavaScript.js"></script>
+</body>
+
+</html>
