@@ -8,79 +8,9 @@
     font-weight: bolder;
 }
 
-.Q1 {
-    display: block;
-    margin-left: 33em;
-    margin-right: 33em;
-    margin-top: 10em;
-    width: 450px;
-    text-align: left;
-}
-
-.Q2 {
-    display: block;
-    margin-left: 33em;
-    margin-right: 33em;
-    margin-top: 10em;
-    width: 450px;
-    text-align: left;
-}
-
-.Q3 {
-    display: block;
-    margin-left: 33em;
-    margin-right: 33em;
-    margin-top: 10em;
-    width: 450px;
-    text-align: left;
-}
-
-.Q4 {
-    display: block;
-    margin-left: 33em;
-    margin-right: 33em;
-    margin-top: 10em;
-    width: 450px;
-    text-align: left;
-}
-
-.Q5 {
-    display: block;
-    margin-left: 33em;
-    margin-right: 33em;
-    margin-top: 10em;
-    width: 450px;
-    text-align: left;
-} 
-
-.Done {
-    display: block;
-    margin-left: 33em;
-    margin-right: 33em;
-    margin-top: 10em;
-    width: 450px;
-    text-align: left;
-}
-
-.scoreCard {
-    display: block;
-    margin-left: 33em;
-    margin-right: 33em;
-    margin-top: 10em;
-    width: 450px;
-    text-align: left;
-}
-
 .hidden {
     display: none;
 }
 .visible {
     display: block;
-}
-
-#HScore:hover,
-#HScore:focus {
-    color: var(--black);
-    text-decoration: none;
-    cursor: pointer;
 }

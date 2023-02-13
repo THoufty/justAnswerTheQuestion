@@ -1,51 +1,81 @@
+//defines the start button and time element and the answer notification slot.
 var start = document.getElementById("startBtn")
+var timer = document.getElementById("timeLeft")
+let answer = document.getElementById("answer")
+
+//creates answer buttons.
 var answer1 = document.createElement("button")
 var answer2 = document.createElement("button")
 var answer3 = document.createElement("button")
-var timerEl = document.getElementById("timeLeft")
+var answer4 = document.createElement("button")
+
+//sets starting time and starting score.
 var timeLeft = 60
 var score = 0
-let answerTrue = document.getElementById("answer")
-const A1 = ['HyperText Markup Language', 'Human Type Machine Learning', 'HyperText Manual Lexicon']
-const A2 = ['Styles the color of text and background', 'Displays data in a chosen format', 'Both of these answers are correct']
-const A3 = ['<image>', '<a ref="">', 'a href="">']
 
-document.getElementById("firstThing").style.display = "none"
+// answer arrays.
+const A1 = ['alerts', 'booleans', 'strings', 'numbers']
+const A2 = ['quotes', 'curly brackets', 'parentheses', 'square brackets']
+const A3 = ['bumbers and strings', 'other arrays', 'booleans', 'all of the above']
+const A4 = ['commas', 'curly brackets', 'parentheses', 'quotes']
+const A5 = ['JavaScript', 'terminal/Bash', 'for loops', 'console.log']
+
+//hides everything but the welcome text
+document.getElementById("firstThing").style.display = 'none'
 document.getElementById('highScore').style.display = 'none'
-document.getElementById('HighScoreList').style.display = 'none'
+document.getElementById('highScoreList').style.display = 'none'
+
+//starts the timer and the first question when you click the startbutton and hides the start button.
+start.addEventListener('click', function () {
+  countdown()
+  document.getElementById("startBtn").style.display = 'none'
+  document.getElementById("h1").style.display = 'none'
+  document.getElementById("second").style.display = 'none'
+  Q1()
+})
 
 //first question//
 function Q1() {
 
-  document.getElementById("startScreen").textContent = 'What is HTML an acronym for?'
+  document.getElementById("start").textContent = 'Commonly used data types DO NOT include:'
 
   answer1.textContent = A1[0]
   answer2.textContent = A1[1]
   answer3.textContent = A1[2]
+  answer4.textContent = A1[3]
+
 
   document.body.appendChild(answer1)
   document.body.appendChild(answer2)
   document.body.appendChild(answer3)
+  document.body.appendChild(answer4)
 
   answer1.setAttribute("id", "ansBtn")
   answer2.setAttribute("id", "ansBtn")
   answer3.setAttribute("id", "ansBtn")
+  answer4.setAttribute("id", "ansBtn")
 
   answer1.addEventListener('click', function () {
-    answerTrue.textContent = "Correct!"
+    answer.textContent = "Correct!"
     score = score + 10
     Q2()
   })
 
   answer2.addEventListener('click', function () {
-    answerTrue.textContent = "Incorrect!"
-    timeLeft = timeLeft - 5
+    answer.textContent = "Incorrect!"
+    timeLeft = timeLeft - 10
     Q2()
   })
 
   answer3.addEventListener('click', function () {
-    answerTrue.textContent = "Incorrect!"
-    timeLeft = timeLeft - 5
+    answer.textContent = "Incorrect!"
+    timeLeft = timeLeft - 10
+    Q2()
+  })
+
+  answer4.addEventListener('click', function () {
+    answer.textContent = "Incorrect!"
+    timeLeft = timeLeft - 10
     Q2()
   })
 
@@ -55,79 +85,170 @@ function Q2() {
 
 
 
-  document.getElementById("startScreen").textContent = 'What does CSS do to an HTML page?'
+  document.getElementById("start").textContent = 'The condition of an if/else statement is enclosed within _____.'
 
   answer1.textContent = A2[0]
   answer2.textContent = A2[1]
   answer3.textContent = A2[2]
+  answer4.textContent = A2[3]
+
 
   answer1.addEventListener('click', function () {
-    answerTrue.textContent = "Incorrect!"
-    timeLeft = timeLeft - 5
+    answer.textContent = "Incorrect!"
+    timeLeft = timeLeft - 10
     Q3()
   })
 
   answer2.addEventListener('click', function () {
-    answerTrue.textContent = "Incorrect!"
-    timeLeft = timeLeft - 5
+    answer.textContent = "Correct!"
+    score = score + 10
     Q3()
   })
 
   answer3.addEventListener('click', function () {
-    answerTrue.textContent = "Correct!"
+    answer.textContent = "Incorrect!"
+    timeLeft = timeLeft - 10
     Q3()
-    score = score + 10
+  })
+
+  answer4.addEventListener('click', function () {
+    answer.textContent = "Incorrect!"
+    timeLeft = timeLeft - 10
+    Q3()
   })
 }
 
 
 function Q3() {
 
-  document.getElementById("startScreen").textContent = 'Which element tag represents an image through a hyperlink?'
+  document.getElementById("start").textContent = 'Arrays in JavaScript can be used to store _____.'
 
   answer1.textContent = A3[0]
   answer2.textContent = A3[1]
   answer3.textContent = A3[2]
+  answer4.textContent = A3[3]
+
 
   answer1.addEventListener('click', function () {
-    answerTrue.textContent = "Incorrect!"
-    timeLeft - 5
+    answer.textContent = "Incorrect!"
+    timeLeft = timeLeft - 10
+    Q4()
+  })
+
+  answer2.addEventListener('click', function () {
+    answer.textContent = "Incorrect!"
+    timeLeft = timeLeft - 10
+    Q4()
+  })
+
+  answer3.addEventListener('click', function () {
+    answer.textContent = "Incorrect!"
+    timeLeft = timeLeft - 10
+    Q4()
+  })
+
+  answer4.addEventListener('click', function () {
+    answer.textContent = "Correct!"
+    score = score + 10
+    Q4()
+  })
+}
+
+function Q4() {
+
+  document.getElementById("start").textContent = 'String values must be enclosed within _____ when being assigned to variables.'
+
+  answer1.textContent = A3[0]
+  answer2.textContent = A3[1]
+  answer3.textContent = A3[2]
+  answer4.textContent = A3[3]
+
+
+  answer1.addEventListener('click', function () {
+    answer.textContent = "Incorrect!"
+    timeLeft = timeLeft - 10
+    Q5()
+  })
+
+  answer2.addEventListener('click', function () {
+    answer.textContent = "Incorrect!"
+    timeLeft = timeLeft - 10
+    Q5()
+  })
+
+  answer3.addEventListener('click', function () {
+    answer.textContent = "Incorrect!"
+    timeLeft = timeLeft - 10
+    Q5()
+  })
+
+  answer4.addEventListener('click', function () {
+    answer.textContent = "Correct!"
+    score = score + 10
+    Q5()
+  })
+}
+
+function Q5() {
+
+  document.getElementById("start").textContent = 'a very useful tool used during developement and debugging for printing content to the debugger is :'
+
+  answer1.textContent = A3[0]
+  answer2.textContent = A3[1]
+  answer3.textContent = A3[2]
+  answer4.textContent = A3[3]
+
+
+  answer1.addEventListener('click', function () {
+    answer.textContent = "Incorrect!"
+    timeLeft - 10
     highScore()
   })
 
   answer2.addEventListener('click', function () {
-    answerTrue.textContent = "Incorrect!"
-    timeLeft - 5
+    answer.textContent = "Incorrect!"
+    timeLeft - 10
     highScore()
   })
 
   answer3.addEventListener('click', function () {
-    answerTrue.textContent = "Correct!"
+    answer.textContent = "Incorrect!"
+    highScore()
+    score = score - 10
+  })
+
+  answer4.addEventListener('click', function () {
+    answer.textContent = "Correct!"
     highScore()
     score = score + 10
   })
-
 }
 
 function highScore() {
+  //gives the end game notifications
+  document.getElementById("h1").textContent = 'GAME OVER'
+  document.getElementById("start").textContent = 'Enter Initials Into Scoreboard Here'
 
-  document.getElementById("startScreen").textContent = 'Enter Initials Into Scoreboard Here'
-
+  //hides the answer buttons
   answer1.style.display = 'none'
   answer2.style.display = 'none'
   answer3.style.display = 'none'
+  answer4.style.display = 'none'
 
+  // hides the time left counter
   document.getElementById('h3').style.display = 'none'
-  timerEl.style.display = 'none'
+  timer.style.display = 'none'
 
-  document.getElementById("initialEntry").style.display = "block"
+  //shows the initials entry box.
+  document.getElementById("firstThing").style.display = "block"
+
 
   score = score + timeLeft
   document.getElementById('score').textContent = 'Your Score: ' + score
 
-  var initialEnter = document.createElement('button')
-  initialEnter.textContent = 'Enter'
-  document.body.appendChild(initialEnter)
+  var initial = document.createElement('button')
+  initial.textContent = 'Enter'
+  document.body.appendChild(initial)
 
   var initials = document.getElementById('name').innerHTML
   localStorage.setItem('initialsList', initials)
@@ -157,23 +278,16 @@ function highScore() {
 
 };
 
-start.addEventListener('click', function startQuiz() {
-  countdown()
-  document.getElementById("startBtn").style.display = "none"
-  question1()
-})
-
 function countdown() {
   setInterval(function () {
     if (timeLeft > 1) {
-      timerEl.textContent = timeLeft + ' seconds remaining'
+      timer.textContent = timeLeft + ' seconds remaining'
       timeLeft--
     } else if (timeLeft === 1) {
-      timerEl.textContent = timeLeft + ' second remaining'
+      timer.textContent = timeLeft + ' second remaining'
       timeLeft--
     } else if (timeLeft === 0) {
-      return
-
+      highScore()
     }
   }, 1000)
 };
