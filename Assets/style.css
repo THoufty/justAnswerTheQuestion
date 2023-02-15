@@ -1,3 +1,6 @@
+* {
+    font-family: Comic Sans MS, ;
+}
 .welcome {
     display: block;
     margin-left: 33em;
@@ -8,9 +11,8 @@
     font-weight: bolder;
 }
 
-.hidden {
-    display: none;
-}
-.visible {
-    display: block;
+#ansBtn {
+    background-color: rgb(0, 0, 0);
+    color: rgb(9, 255, 0);
+    font-weight: bolder;
 }

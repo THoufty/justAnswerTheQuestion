@@ -158,10 +158,10 @@ function Q4() {
 
   document.getElementById("start").textContent = 'String values must be enclosed within _____ when being assigned to variables.'
 
-  answer1.textContent = A3[0]
-  answer2.textContent = A3[1]
-  answer3.textContent = A3[2]
-  answer4.textContent = A3[3]
+  answer1.textContent = A4[0]
+  answer2.textContent = A4[1]
+  answer3.textContent = A4[2]
+  answer4.textContent = A4[3]
 
 
   answer1.addEventListener('click', function () {
@@ -193,91 +193,37 @@ function Q5() {
 
   document.getElementById("start").textContent = 'a very useful tool used during developement and debugging for printing content to the debugger is :'
 
-  answer1.textContent = A3[0]
-  answer2.textContent = A3[1]
-  answer3.textContent = A3[2]
-  answer4.textContent = A3[3]
+  answer1.textContent = A5[0]
+  answer2.textContent = A5[1]
+  answer3.textContent = A5[2]
+  answer4.textContent = A5[3]
 
 
   answer1.addEventListener('click', function () {
     answer.textContent = "Incorrect!"
-    timeLeft - 10
+    timeLeft = timeLeft - 10
     highScore()
   })
 
   answer2.addEventListener('click', function () {
     answer.textContent = "Incorrect!"
-    timeLeft - 10
+    timeLeft = timeLeft - 10
     highScore()
   })
 
   answer3.addEventListener('click', function () {
     answer.textContent = "Incorrect!"
+    timeLeft = timeLeft - 10
     highScore()
-    score = score - 10
   })
 
   answer4.addEventListener('click', function () {
     answer.textContent = "Correct!"
-    highScore()
     score = score + 10
+    highScore()
   })
 }
-
-function highScore() {
-  //gives the end game notifications
-  document.getElementById("h1").textContent = 'GAME OVER'
-  document.getElementById("start").textContent = 'Enter Initials Into Scoreboard Here'
-
-  //hides the answer buttons
-  answer1.style.display = 'none'
-  answer2.style.display = 'none'
-  answer3.style.display = 'none'
-  answer4.style.display = 'none'
-
-  // hides the time left counter
-  document.getElementById('h3').style.display = 'none'
-  timer.style.display = 'none'
-
-  //shows the initials entry box.
-  document.getElementById("firstThing").style.display = "block"
-
-
-  score = score + timeLeft
-  document.getElementById('score').textContent = 'Your Score: ' + score
-
-  var initial = document.createElement('button')
-  initial.textContent = 'Enter'
-  document.body.appendChild(initial)
-
-  var initials = document.getElementById('name').innerHTML
-  localStorage.setItem('initialsList', initials)
-  localStorage.setItem('score', score)
-
-  let submitBttn = document.getElementById('submit')
-  submitBttn.addEventListener('click', submission)
-  function submission(event) {
-    event.preventDefault()
-    let initials = {
-      initials: initialsInput.value.trim(),
-      score: score,
-    };
-    let scoreboardList = document.getElementById('scoreboardList')
-    let scoreboardListEl = scoreboardList.createElement('li')
-    scoreboardListEl.innerHTML = initials
-
-    document.appendChild(scoreboardListEl)
-  };
-
-  var scoreboardScores = JSON.parse(localStorage.getItem('initials'))
-  if (scoreboardScores === null) {
-    scoreboardScores = []
-  }
-  scoreboardScores.push(initials)
-  localStorage.setItem('initials', JSON.stringify(storedScores))
-
-};
-
+// starts the countdown
 function countdown() {
   setInterval(function () {
     if (timeLeft > 1) {
@@ -291,3 +237,28 @@ function countdown() {
     }
   }, 1000)
 };
+
+function highScore() {
+  //gives the end game notifications
+  document.getElementById("h1").textContent = 'GAME OVER'
+  document.getElementById("start").textContent = 'Enter Initials Into Scoreboard Here'
+
+  //hides the answer buttons
+  answer1.style.display = 'none'
+  answer2.style.display = 'none'
+  answer3.style.display = 'none'
+  answer4.style.display = 'none'
+  answer.style.display = 'none'
+
+  // hides the time left counter
+  document.getElementById('h3').style.display = 'none'
+  timer.style.display = 'none'
+
+  //shows the initials entry box.
+  document.getElementById("firstThing").style.display = "block"
+
+//creates the final score and enters it in to the html.
+  score = score + timeLeft
+  document.getElementById('score').textContent = 'Your Score: ' + score
+
+}
